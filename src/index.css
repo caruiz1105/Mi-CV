@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050816;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* AURORA */
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.18;
+  z-index: -2;
+}
+
+body::before {
+  background: #00ffff;
+  top: -250px;
+  left: -250px;
+  animation: aurora1 18s ease-in-out infinite alternate;
+}
+
+body::after {
+  background: #6366f1;
+  bottom: -250px;
+  right: -250px;
+  animation: aurora2 22s ease-in-out infinite alternate;
+}
+
+/* CAPA EXTRA */
+
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 255, 255, .08), transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(99, 102, 241, .08), transparent 25%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes aurora1 {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(250px, 150px);
+  }
+}
+
+@keyframes aurora2 {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-250px, -150px);
+  }
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  position: relative;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+}
+
+a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 15px #00ffff;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 2.7rem !important;
+  }
+
+  section {
+    padding: 80px 20px;
+  }
+}
+
+/* ===== ESTRELLAS ===== */
+
+.stars,
+.stars2,
+.stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+}
+
+/* CAPA 1 */
+
+.stars {
+  background-image:
+    radial-gradient(3px 3px at 40px 60px, white, transparent),
+    radial-gradient(2px 2px at 120px 180px, #00ffff, transparent),
+    radial-gradient(2px 2px at 250px 80px, white, transparent),
+    radial-gradient(3px 3px at 350px 300px, #00ffff, transparent),
+    radial-gradient(2px 2px at 500px 200px, white, transparent);
+
+  background-size: 600px 600px;
+
+  animation: moveStars 180s linear infinite;
+
+  opacity: 0.7;
+
+  z-index: -3;
+}
+
+/* CAPA 2 */
+
+.stars2 {
+  background-image:
+    radial-gradient(4px 4px at 80px 100px, white, transparent),
+    radial-gradient(3px 3px at 200px 220px, #38bdf8, transparent),
+    radial-gradient(4px 4px at 420px 140px, white, transparent),
+    radial-gradient(3px 3px at 520px 320px, #00ffff, transparent);
+
+  background-size: 900px 900px;
+
+  animation: moveStars 250s linear infinite;
+
+  opacity: 0.5;
+
+  z-index: -3;
+}
+
+/* CAPA 3 (ESTRELLAS GRANDES) */
+
+.stars3 {
+  background-image:
+    radial-gradient(12px 12px at 100px 120px, white, transparent),
+    radial-gradient(10px 10px at 300px 250px, #00ffff, transparent),
+    radial-gradient(8px 8px at 600px 400px, white, transparent),
+    radial-gradient(10px 10px at 850px 600px, #38bdf8, transparent),
+    radial-gradient(12px 12px at 1200px 300px, white, transparent);
+
+  background-size: 1600px 1600px;
+
+  animation: moveStars 350s linear infinite;
+
+  opacity: 0.35;
+
+  filter: blur(1px);
+
+  z-index: -3;
+}
+
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-800px);
+  }
+}
+
+/* PARPADEO */
+
+.stars::after,
+.stars2::after,
+.stars3::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== GLASSMORPHISM ===== */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(0, 255, 255, 0.05);
+
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+
+  border: 1px solid rgba(0, 255, 255, 0.3);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(0, 255, 255, 0.15);
+}
+
+/* ===== NAVBAR PREMIUM ===== */
+
+nav a {
+  position: relative;
+  font-weight: 600;
+}
+
+nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: #00ffff;
+
+  transition: 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff;
+}
+
+/* ===== WHATSAPP ===== */
+
+.whatsapp-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.whatsapp-btn {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+
+  background: #25d366;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 0 20px rgba(37, 211, 102, 0.5),
+    0 0 40px rgba(37, 211, 102, 0.3);
+
+  animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+
+  right: 85px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: rgba(0, 0, 0, 0.85);
+
+  color: white;
+
+  padding: 10px 15px;
+
+  border-radius: 10px;
+
+  white-space: nowrap;
+
+  font-size: 0.9rem;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+}
+
+.whatsapp-container:hover .whatsapp-tooltip {
+  opacity: 1;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 20px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ===== ICONOS TECNOLOGÍAS ===== */
+
+.react-spin {
+  animation: reactRotate 8s linear infinite;
+}
+
+@keyframes reactRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.glass-card svg {
+  transition: all .3s ease;
+}
+
+.glass-card:hover svg {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 12px #00ffff);
+}
