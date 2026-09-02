@@ -3,20 +3,19 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const proyectos = [
   {
-    titulo: "GodyKingVentas",
+    titulo: "GodyInfo",
     descripcion:
-      "Sistema web para registro y gestión de ventas con autenticación de usuarios y panel administrativo.",
-    tecnologias: ["ASP.NET", "C#", "SQL Server"],
-    github: "#",
-    demo: "#",
-    imagen: "/proyecto1.jpg",
+      "Página web netamente informativa para la empresa GodyKing SAC",
+    tecnologias: ["TypeScript", "React","Vite", "CSS"],
+    github: "https://github.com/caruiz1105/godyking-web",
+    demo: "https://godyking-web.vercel.app/",
+    imagen: "/proyecto4.jpg",
   },
   {
     titulo: "Smart-Park",
     descripcion:
       "Sitio web tipo Marketplace de estacionamientos en la ciudad de Huamanga-Ayacucho.",
     tecnologias: ["React", "RabbitMQ", "Redis", "FastAPI", "PostgreSQL", "Python"],
-    github: "#",
     demo: "https://smart-park-web-production.up.railway.app/",
     imagen: "/proyecto2.jpg",
   },
@@ -25,18 +24,16 @@ const proyectos = [
     descripcion:
       "Sitio web moderno personal para información general de la persona y tambien métodos de contacto con la misma.",
     tecnologias: ["JavaScritp", "React", "Framer Motion", "CSS"],
-    github: "#",
-    demo: "",
+    github: "https://github.com/caruiz1105/Mi-CV",
+    demo: "https://mi-cv-indol.vercel.app/",
     imagen: "/proyecto3.jpg",
   },
   {
-    titulo: "GodyInfo",
+    titulo: "GodyKingVentas",
     descripcion:
-      "Página web netamente informativa para la empresa GodyKing SAC",
-    tecnologias: ["TypeScript", "React","Vite", "CSS"],
-    github: "https://github.com/caruiz1105/godyking-web",
-    demo: "https://godyking-web.vercel.app/",
-    imagen: "/proyecto4.jpg",
+      "Sistema web para registro y gestión de ventas con autenticación de usuarios y panel administrativo.",
+    tecnologias: ["ASP.NET", "C#", "SQL Server"],
+    imagen: "/proyecto1.jpg",
   },
 ];
 
